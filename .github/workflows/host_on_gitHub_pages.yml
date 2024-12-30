@@ -48,7 +48,7 @@ jobs:
         run: flutter test
 
       - name: Build Web App
-        run: flutter build web --base-href=/mynews/mynews/
+        run: flutter build web --base-href=/mynews/
 
       - name: Deploy to GitHub Pages 🚀
         uses: JamesIves/github-pages-deploy-action@v4
