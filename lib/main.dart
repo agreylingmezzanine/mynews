@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:intl/intl.dart';
 import 'models/article.dart';
 import 'services/news_service.dart';
@@ -119,14 +118,17 @@ class _NewsHomePageState extends State<NewsHomePage> {
                                 children: [
                                   SizedBox(
                                     height: 180,
-                                    child: CachedNetworkImage(
-                                      imageUrl: article.imageUrl,
+                                    child: Image.network(
+                                      article.imageUrl,
                                       fit: BoxFit.cover,
                                       width: double.infinity,
-                                      placeholder: (context, url) => const Center(
-                                        child: CircularProgressIndicator(),
-                                      ),
-                                      errorWidget: (context, url, error) =>
+                                      loadingBuilder: (context, child, loadingProgress) {
+                                        if (loadingProgress == null) return child;
+                                        return const Center(
+                                          child: CircularProgressIndicator(),
+                                        );
+                                      },
+                                      errorBuilder: (context, error, stackTrace) =>
                                           const Icon(Icons.error),
                                     ),
                                   ),
