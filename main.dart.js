@@ -64999,7 +64999,7 @@ pS(){var s=0,r=A.Q(t.Tq),q,p=2,o,n,m,l,k,j,i
 var $async$pS=A.R(function(a,b){if(a===1){o=b
 s=p}while(true)switch(s){case 0:p=4
 s=7
-return A.T(A.azC(A.fa("https://newsapi.org/v2/everything?q=artificial+intelligence+OR+AI&sortBy=publishedAt&apiKey=127b52bbb3964861ad27d9bb6de3f0f3",0,null)),$async$pS)
+return A.T(A.azC(A.fa("https://newsapi.org/v2/everything?q=artificial+intelligence+OR+AI&sortBy=publishedAt&apiKey=",0,null)),$async$pS)
 case 7:n=b
 if(n.b===200){k=n
 m=B.cs.dO(0,A.azn(A.axq(k.e).c.a.i(0,"charset")).dO(0,k.w))
