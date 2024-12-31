@@ -5,7 +5,9 @@ import '../models/article.dart';
 class NewsService {
   // Using NewsAPI's free tier
   static const String _baseUrl = 'https://newsapi.org/v2';
-  static const String _apiKey = '127b52bbb3964861ad27d9bb6de3f0f3'; // Replace with your API key
+
+  //get environment variable for API key
+  static const String _apiKey = String.fromEnvironment('NEWSAPI_KEY');
 
   Future<List<Article>> getTopHeadlines() async {
     try {
